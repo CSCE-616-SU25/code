@@ -89,14 +89,11 @@ module tb_adder_4bit;
         // Check results
         test_count++;
         if (sum === expected_sum && cout === expected_cout) begin
-            $display("%0t\t%b\t%b\t%b\t%b\t%b\t%b%b\t\tPASS - %s", 
-                     $time, a, b, cin, sum, cout, expected_cout, expected_sum, description);
+            $display("%0t\t%b\t%b\t%b\t%b\t%b\t%b%b\t\tPASS - %s", $time, a, b, cin, sum, cout, expected_cout, expected_sum, description);
             pass_count++;
         end else begin
-            $display("%0t\t%b\t%b\t%b\t%b\t%b\t%b%b\t\tFAIL - %s", 
-                     $time, a, b, cin, sum, cout, expected_cout, expected_sum, description);
-            $display("\t\tExpected: sum=%b, cout=%b | Got: sum=%b, cout=%b",
-                     expected_sum, expected_cout, sum, cout);
+            $display("%0t\t%b\t%b\t%b\t%b\t%b\t%b%b\t\tFAIL - %s",  $time, a, b, cin, sum, cout, expected_cout, expected_sum, description);
+            $display("\t\tExpected: sum=%b, cout=%b | Got: sum=%b, cout=%b", expected_sum, expected_cout, sum, cout);
             fail_count++;
         end
     endtask
